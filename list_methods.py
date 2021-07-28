@@ -55,3 +55,42 @@ for num in range(user_input):
 print(sum(user_list))
 
 
+
+#deleting elements in a list
+
+estate_listings = ['Kamulu','Ruiru','Joska',"Muchatha","Kikopey"]
+
+del estate_listings[-2]# deletes specified index
+print(estate_listings)
+
+#alternatively
+
+estate_listings.pop() #removes last element by default
+
+print(estate_listings)
+
+estate_listings.remove('Joska') 
+print(estate_listings)
+
+
+#removing multiple elements from list
+
+#remove odd numbers from list
+
+mixed_numbers = [2,45,66,13,37,49,89,7,87]
+
+for number in mixed_numbers[:]:
+	if number%2 !=0:
+		mixed_numbers.remove(number)
+
+print("Just Even:",mixed_numbers)
+
+
+#remove all even using list comprehension
+
+mixed_numbers = [2,45,66,13,37,49,89,7,87]
+
+mixed_numbers = [num for num in mixed_numbers if num %2!=0]
+
+print(mixed_numbers)
+
