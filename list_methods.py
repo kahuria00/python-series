@@ -94,3 +94,55 @@ mixed_numbers = [num for num in mixed_numbers if num %2!=0]
 
 print(mixed_numbers)
 
+
+#MAP , FILTER and REDUCE in lists
+
+#using Map with one Iterable/one item
+
+classmates = ["Sassy","Jamie","Jon","Sansa","Bran","Rob","Arya"]
+
+uppercased = list(map(str.upper,classmates))
+
+print(uppercased)
+
+#using Map with multiple items or iterables
+
+circle_area = [3.567777,5.57866,4.00091,56.24421,9.909092,321.8989899,15.0867451]
+
+all_areas = list(map(round,circle_area,range(1,7)))
+
+print(all_areas)
+
+
+#map to create zip()
+
+my_letters =["A","B","C","D"]
+my_numbers = [1,2,3,4]
+
+results = list(map(lambda x,y:(x,y),my_letters,my_numbers))
+print(results)
+
+
+#Using filter
+
+grades =[40,50,90,80,70,87,100]
+
+def is_A_student(grade):
+	return grade >75
+
+over_75 = list(filter(is_A_student,grades))
+
+print(over_75)
+
+
+#palindrome detector with filter
+
+names = ["rewire","madam","fluf",'alfafa',"decide"]
+
+palindromes = list(filter(lambda word: word == word[::-1],names))
+print(palindromes)
+
+
+
+
+
