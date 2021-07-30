@@ -146,3 +146,11 @@ print(palindromes)
 
 
 
+#using map in for loop
+
+sequences = list(range(10))
+
+for element in map(str,sequences):
+	print(element)
+
+	
