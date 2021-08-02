@@ -1,4 +1,7 @@
 
+import functools
+import operator
+import itertools
 #accessing list items
 
 #list indexing
@@ -143,9 +146,6 @@ palindromes = list(filter(lambda word: word == word[::-1],names))
 print(palindromes)
 
 
-
-
-
 #using map in for loop
 
 sequences = list(range(10))
@@ -153,4 +153,50 @@ sequences = list(range(10))
 for element in map(str,sequences):
 	print(element)
 
-	
+
+#reduce
+ #import reduce
+
+list2 = [1,3,5,7,11,13] #initialize a list
+
+#using reduce to compute sum
+
+sumed = functools.reduce(lambda a,b: a+b,list2)
+
+print("sum",sumed)
+
+
+#using reduce to compute maximum from list
+
+maxed = functools.reduce(lambda a,b: a if a>b else b,list2)
+
+print(f"maximum number :{maxed}")
+
+#sum using reduce and operator function
+operator_test = functools.reduce(operator.add,list2)
+
+print("operator list",operator_test)
+
+
+#summation of strings
+
+sum_strings = functools.reduce(operator.add,["you"," ","and"," ","I"])
+
+print(sum_strings)
+
+#accumulate vs reduce
+
+#import itertools for accumulate/ functools for reduce
+
+#accumulate
+
+acc = list(itertools.accumulate(list2,lambda x,y: x+y))
+
+print("accumulate sum",acc)
+
+
+#reduce
+
+red = functools.reduce(lambda x,y: x+y,list2)
+
+print("reduce sum",red)
